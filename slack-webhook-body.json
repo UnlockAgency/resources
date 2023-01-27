@@ -1,0 +1,77 @@
+{
+    "blocks": [
+		{
+			"text": {
+				"text": "*Nieuw ticket: #{{ticket.id}}*\n\nAangemaakt door: {{ticket.contact.name}}.\n\n<{{ticket.url}}|{{ticket.subject}}>",
+				"type": "mrkdwn"
+			},
+			"accessory": {
+				"type": "image",
+				"image_url": "https://raw.githubusercontent.com/UnlockAgency/resources/master/{{ticket.priority}}.png",
+				"alt_text": "{{ticket.priority}}"
+			},
+			"type": "section"
+		},
+		{
+			"fields": [
+				{
+					"text": "*Type:*\n{{ticket.ticket_type}}",
+					"type": "mrkdwn"
+				},
+				{
+					"text": "*Prioriteit:*\n{{ticket.priority}}",
+					"type": "mrkdwn"
+				}
+			],
+			"type": "section"
+		},
+		{
+			"fields": [
+				{
+					"text": "*Gemaakt door:*\n{{ticket.contact.name}}",
+					"type": "mrkdwn"
+				}
+			],
+			"type": "section"
+		},
+		{
+			"text": {
+				"text": "{{ticket.subject}}",
+				"type": "plain_text"
+			},
+			"type": "header"
+		},
+		{
+			"type": "actions",
+			"elements": [
+				{
+					"type": "button",
+					"text": {
+						"type": "plain_text",
+						"text": "Open ticket",
+						"emoji": true
+					},
+					"url": "{{ticket.url}}"
+				}
+			]
+		},
+		{
+			"type": "context",
+			"elements": [
+				{
+					"type": "image",
+					"image_url": "https://raw.githubusercontent.com/UnlockAgency/resources/master/{{ticket.priority}}.png",
+					"alt_text": "{{ticket.priority}}"
+				},
+				{
+					"type": "mrkdwn",
+					"text": "{{ticket.contact.name}}"
+				}
+			]
+		},
+		{
+			"type": "divider"
+		}
+	],
+    "text": "Nieuw ticket gemaakt door: {{ticket.contact.name}}"
+}
